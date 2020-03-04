@@ -909,10 +909,14 @@ $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
 $include-todolist-application: dynamic(true);;
 $include-todolist-store-personnel: dynamic(true);;
+$include-todolist-view-main-content: dynamic(true);;
+$include-todolist-view-main-done: dynamic(true);;
 $include-todolist-view-main-list: dynamic(true);;
 $include-todolist-view-main-main: dynamic(true);;
 $include-todolist-view-main-maincontroller: dynamic(true);;
 $include-todolist-view-main-mainmodel: dynamic(true);;
+$include-todolist-view-main-progress: dynamic(true);;
+$include-todolist-view-main-todo: dynamic(true);;
 $output-paths: ("path": "../../classic/resources", "shared": "../../resources");
 
 /* ======================== ETC ======================== */
@@ -1379,4 +1383,14 @@ $todolist-resource-path: 'images' !default;
 $current-package: false;
 $current-resource-root: $todolist-resource-root;
 $relative-image-path-for-uis: $todolist-resource-path;
+@import '../../../../../sass/src/view/main/Main';
+@import '../../../../../sass/src/view/main/Main';
+
+/* including package todolist */
+$todolist-resource-root: '' !default;
+$todolist-resource-path: 'images' !default;
+$current-package: false;
+$current-resource-root: $todolist-resource-root;
+$relative-image-path-for-uis: $todolist-resource-path;
+@import '../../../../../classic/sass/src/view/main/Main';
 @import '../../../../../classic/sass/src/view/main/Main';

@@ -9,7 +9,8 @@ Ext.application({
     extend: 'todolist.Application',
 
     requires: [
-        'todolist.view.main.Main'
+        //'todolist.view.main.Main'
+        'todolist.*'
     ],
 
     // The name of the initial view to create. With the classic toolkit this class

@@ -1,16 +1,25 @@
-/**
- * This class is the view model for the Main view of the application.
- */
 Ext.define('todolist.view.main.MainModel', {
     extend: 'Ext.app.ViewModel',
-
     alias: 'viewmodel.main',
 
+    add: function(config) {
+        var todoList = this.get('todoList');
+        todoList[config.todoId] = {
+            todoId : config.todoId,
+            checked : config.checked,
+            text : config.text,
+            content : config.content
+        };
+
+        this.set('todoList', todoList);
+    },
+
+    sync: function() {
+        var todoList = this.get('todoList');
+        localStorage.setItem('todoList', JSON.stringify(todoList));
+    },
+
     data: {
-        name: 'todolist',
-
-        loremIpsum: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        todoList: {},
     }
-
-    //TODO - add data, formulas and/or methods to support your view
 });
